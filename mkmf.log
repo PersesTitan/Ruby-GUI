@@ -1,0 +1,1481 @@
+have_func: checking for rb_obj_instance_exec() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_obj_instance_exec; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_sym2str() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_sym2str; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_id2str() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_id2str; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_ary_cat() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_ary_cat; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for strndup() in string.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <string.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))strndup; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for ruby_native_thread_p() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))ruby_native_thread_p; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_errinfo() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_errinfo; return !p; }
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct RArray.ptr in ruby.h... -------------------- no
+
+"gcc -fdeclspec -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -m64  -c conftest.c"
+conftest.c:6:39: error: no member named 'ptr' in 'struct RArray'
+int s = (char *)&((struct RArray*)0)->ptr - (char *)0;
+                 ~~~~~~~~~~~~~~~~~~~  ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((struct RArray*)0)->ptr - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return !!argv[argc];
+10: }
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct RArray.len in ruby.h... -------------------- no
+
+"gcc -fdeclspec -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -m64  -c conftest.c"
+conftest.c:6:39: error: no member named 'len' in 'struct RArray'
+int s = (char *)&((struct RArray*)0)->len - (char *)0;
+                 ~~~~~~~~~~~~~~~~~~~  ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((struct RArray*)0)->len - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return !!argv[argc];
+10: }
+/* end */
+
+--------------------
+
+have_library: checking for t_open() in -lnsl... -------------------- no
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0 -lnsl   "
+conftest.c:14:57: error: use of undeclared identifier 't_open'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))t_open; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))t_open; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0 -lnsl   "
+ld: library not found for -lnsl
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void t_open();
+15: int t(void) { t_open(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for socket() in -lsocket... -------------------- no
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0 -lsocket   "
+conftest.c:14:57: error: use of undeclared identifier 'socket'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))socket; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))socket; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0 -lsocket   "
+ld: library not found for -lsocket
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void socket();
+15: int t(void) { socket(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for dlopen() in -ldl... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0 -ldl   "
+conftest.c:14:57: error: use of undeclared identifier 'dlopen'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))dlopen; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))dlopen; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64   -lruby.3.0 -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void dlopen();
+15: int t(void) { dlopen(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for log() in -lm... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -ldl  -lruby.3.0 -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))log; return !p; }
+/* end */
+
+--------------------
+
+have_header: checking for tcl.h... -------------------- yes
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tcl.h>
+/* end */
+
+--------------------
+
+have_header: checking for tk.h... -------------------- no
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe  conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+--------------------
+
+find_header: checking for tk.h in /usr/local/include,/usr/pkg/include,/usr/include,/Tcl/include,/usr/local/include/tk8.7,/usr/pkg/include/tk8.7,/usr/include/tk8.7,/Tcl/include/tk8.7,/usr/local/include/tk8.6,/usr/pkg/include/tk8.6,/usr/include/tk8.6,/Tcl/include/tk8.6,/usr/local/include/tk8.5,/usr/pkg/include/tk8.5,/usr/include/tk8.5,/Tcl/include/tk8.5,/usr/local/include/tk8.4,/usr/pkg/include/tk8.4,/usr/include/tk8.4,/Tcl/include/tk8.4,/usr/local/include/tk8.3,/usr/pkg/include/tk8.3,/usr/include/tk8.3,/Tcl/include/tk8.3,/usr/local/include/tk8.2,/usr/pkg/include/tk8.2,/usr/include/tk8.2,/Tcl/include/tk8.2,/usr/local/include/tk8.1,/usr/pkg/include/tk8.1,/usr/include/tk8.1,/Tcl/include/tk8.1,/usr/local/include/tk8.0,/usr/pkg/include/tk8.0,/usr/include/tk8.0,/Tcl/include/tk8.0,/usr/local/include/tk4.2,/usr/pkg/include/tk4.2,/usr/include/tk4.2,/Tcl/include/tk4.2... -------------------- no
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe  conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk8.7 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk8.7 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk8.7 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk8.7 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk8.6 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk8.6 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk8.6 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk8.6 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk8.5 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk8.5 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk8.5 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk8.5 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk8.4 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk8.4 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk8.4 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk8.4 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk8.3 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk8.3 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk8.3 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk8.3 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk8.2 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk8.2 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk8.2 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk8.2 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk8.1 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk8.1 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk8.1 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk8.1 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk8.0 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk8.0 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk8.0 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk8.0 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/local/include/tk4.2 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/pkg/include/tk4.2 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/usr/include/tk4.2 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+"gcc -E -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -I/Tcl/include/tk4.2 conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/tk.h:86:11: fatal error: 'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <tk.h>
+/* end */
+
+--------------------
+
+have_func: checking for ruby_native_thread_p() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))ruby_native_thread_p; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_errinfo() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_errinfo; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_hash_lookup() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_hash_lookup; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_proc_new() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_proc_new; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_sourcefile() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_sourcefile; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_alive_p() in ruby.h... -------------------- no
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+conftest.c:16:57: error: use of undeclared identifier 'rb_thread_alive_p'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_alive_p; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_alive_p; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+Undefined symbols for architecture arm64:
+  "_rb_thread_alive_p", referenced from:
+      _t in conftest-f07237.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_thread_alive_p();
+17: int t(void) { rb_thread_alive_p(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_check_trap_pending() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+conftest.c:16:57: error: use of undeclared identifier 'rb_thread_check_trap_pending'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_check_trap_pending; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_check_trap_pending; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_thread_check_trap_pending();
+17: int t(void) { rb_thread_check_trap_pending(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ruby_enc_find_basename() in ruby.h... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+conftest.c:16:57: error: use of undeclared identifier 'ruby_enc_find_basename'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))ruby_enc_find_basename; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))ruby_enc_find_basename; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void ruby_enc_find_basename();
+17: int t(void) { ruby_enc_find_basename(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for t_open() in -lnsl... -------------------- no
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lnsl -lm -ldl   "
+conftest.c:14:57: error: use of undeclared identifier 't_open'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))t_open; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))t_open; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lnsl -lm -ldl   "
+ld: library not found for -lnsl
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void t_open();
+15: int t(void) { t_open(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for socket() in -lsocket... -------------------- no
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lsocket -lm -ldl   "
+conftest.c:14:57: error: use of undeclared identifier 'socket'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))socket; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))socket; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -lsocket -lm -ldl   "
+ld: library not found for -lsocket
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void socket();
+15: int t(void) { socket(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for dlopen() in -ldl... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -ldl -lm -ldl   "
+conftest.c:14:57: error: use of undeclared identifier 'dlopen'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))dlopen; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))dlopen; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl  -lruby.3.0 -ldl -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void dlopen();
+15: int t(void) { dlopen(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for log() in -lm... -------------------- yes
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -ldl -lm -ldl  -lruby.3.0 -lm -ldl -lm -ldl   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <math.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))log; return !p; }
+/* end */
+
+--------------------
+
+"gcc -fdeclspec -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT -m64  -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include "ruby.h"
+4: /*top*/
+5: #ifndef HAVE_NATIVETHREAD
+6: # error
+7: |:/ === HAVE_NATIVETHREAD undefined === /:|
+8: #endif
+/* end */
+
+find_library: checking for XOpenDisplay() in -lX11... -------------------- no
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl -lm -ldl  -lruby.3.0 -lX11 -lm -ldl -lm -ldl   "
+conftest.c:14:57: error: use of undeclared identifier 'XOpenDisplay'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))XOpenDisplay; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))XOpenDisplay; return !p; }
+/* end */
+
+"gcc -fdeclspec -o conftest -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/arm64-darwin21 -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby/backward -I/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0 -I/Users/hadaegyeom/Ruby/Ruby-GUI -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fno-common -pipe -DNO_TAINT conftest.c  -L. -L/Users/hadaegyeom/.rvm/rubies/ruby-3.0.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -m64  -lm -ldl -lm -ldl  -lruby.3.0 -lX11 -lm -ldl -lm -ldl   "
+ld: library not found for -lX11
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void XOpenDisplay();
+15: int t(void) { XOpenDisplay(); return 0; }
+/* end */
+
+--------------------
+

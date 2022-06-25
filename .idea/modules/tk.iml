@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../tk" />
+    <orderEntry type="jdk" jdkName="RVM: ruby-3.0.0 [Ruby-GUI]" jdkType="RUBY_SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.3, RVM: ruby-3.0.0 [Ruby-GUI]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, RVM: ruby-3.0.0 [Ruby-GUI]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake-compiler (v1.2.0, RVM: ruby-3.0.0 [Ruby-GUI]) [gem]" level="application" />
+  </component>
+  <component name="RubyModuleProperties">
+    <option name="autoCreated" value="true" />
+  </component>
+</module>
